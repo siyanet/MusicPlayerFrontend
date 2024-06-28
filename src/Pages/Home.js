@@ -158,7 +158,7 @@ const handlePlayPause = async() => {
                     <StyledHeading3>Home</StyledHeading3>
                 </PrimaryButton>
             <PrimaryButton backgroundColor="#006100" hoverColor="#059e08"> <StyledHeading3 onClick={() => setNavigateToUpload(true)}>Upload</StyledHeading3></PrimaryButton> 
-              {loggedOut &&  <Box  ><PrimaryButton onClick = {logIn}><StyledHeading3>LogIn</StyledHeading3></PrimaryButton></Box>}
+              {!loginSuccess &&  <Box  ><PrimaryButton onClick = {logIn}><StyledHeading3>LogIn</StyledHeading3></PrimaryButton></Box>}
              {loginSuccess && <Box><PrimaryButton onClick={openLogout}><StyledHeading3>LogOut</StyledHeading3></PrimaryButton></Box>}
              </Flex>
              </Box>

@@ -74,7 +74,7 @@ function SongController({audioRefs ,setCurrentPlayingSong,defaultSongs,songs,han
             <Flex flexDirection={'column'} width={'100%'}>
             <Flex flexDirection={'row'} width={'100%'} justifyContent={"center"}>
 
-                <SecondaryButton onClick={() => setCurrentPlayingSong(null)}><StyledIcon icon={faStepBackward}/></SecondaryButton>
+                <SecondaryButton onClick={handlePrevious}><StyledIcon icon={faStepBackward}/></SecondaryButton>
 
                 <SecondaryButton disabled = {isButtonDisabled}onClick={handlePlayPause}>
                     {currentPlayingSongId?  <StyledIcon icon={faPause}/> : <StyledIcon icon={faPlay}/>} </SecondaryButton>

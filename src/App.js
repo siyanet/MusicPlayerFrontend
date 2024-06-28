@@ -4,15 +4,17 @@ import {  Routes, Route } from 'react-router-dom';
 import Upload from "./Pages/musicUpload";
 import Login from "./Pages/login";
 import ProtectedRoute from "./Components/ProtectedRoute";
+import { useSelector } from "react-redux";
 
 function App() {
+  const loggedIn = useSelector((state) => state.loginReducer.success);
   return (
       <Routes>
-        
-            <Route path="/" element={
-              <ProtectedRoute>  <Home /></ProtectedRoute>
-            
-            } />
+        {loggedIn?  <Route path="/" element={
+              <ProtectedRoute><Home /></ProtectedRoute>} /> 
+              : <Route path="/" element={
+                <Home />} />} 
+           
           
  
       <Route path="/upload" element={<ProtectedRoute><Upload/></ProtectedRoute> }/>
